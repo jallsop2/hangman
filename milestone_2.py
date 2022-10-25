@@ -7,7 +7,7 @@ alphabet = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j',
 
 guess = input("Please enter your guess: ")
 
-if len(guess) == 1 and guess in alphabet:
+if len(guess) == 1 and guess.isalpha() == True:
     print('Good Guess!')
 else:
     print('Oops! That is not a valid input.')
