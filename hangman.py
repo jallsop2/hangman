@@ -1,14 +1,16 @@
 import random
-import english_words
 
-word_list = list(english_words.english_words_lower_set)
+with open('word_list.txt') as f:
+    word_list = f.readlines()
 
 
 class Hangman():
     def __init__(self,word_list):
         
         while True:
-            self.word = random.choice(word_list).upper()
+            self.word = random.choice(word_list[:1000]).upper()
+            self.word = self.word[:-1]
+
             if self.word.isalpha() == False or len(self.word) <= 3:
                 continue
             break
