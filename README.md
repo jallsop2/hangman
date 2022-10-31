@@ -97,3 +97,24 @@ class Hangman():
                 self.list_of_guesses.append(guess) 
                 break
 ```
+
+# Milestone 5
+
+I finished the game by creating a function which plays the game. Inside it runs a while loop which checks if the player has won or lost the game with the num_lives and num_letters attributes, and then continues the game with the ask_for_input method if not.
+
+```python
+
+def play_game(word_list):
+    number_of_lives = 5
+    game = Hangman(word_list,number_of_lives)
+    while True:
+        if game.num_lives == 0:
+            print('You lost!')
+            break
+        
+        if game.num_letters == 0:
+            print('Congratulations. You won the game!')
+            break
+
+        game.ask_for_input()
+```
